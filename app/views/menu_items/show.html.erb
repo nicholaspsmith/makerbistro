@@ -1,4 +1,19 @@
+<div class="left-indent">
 <p id="notice"><%= notice %></p>
-
+<div class="row">
+  <div class="large-8 content">
+    
+    <h2><strong><%= @menu_item.name %></strong></h2>
+    <hr />
+    <ul>
+      <h3>Ingredients</h3>
+    <% @ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %></li>
+    <% end %>
+    </ul>
+    
+  </div>
+</div>
+</div>
 <%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
 <%= link_to 'Back', menu_items_path %>
