@@ -12,6 +12,11 @@
   <% end %>
   <%= f.text_field :name, :placeholder => "Name" %>
   <%= f.text_field :price, :placeholder => "Price"  %>
+  <% @menu_item.ingredients.each do |ingredient| %>
+  <%= f.fields_for "ingredients[]", ingredient do |ingredient_form| %>
+    <%= ingredient_form.text_field :name %>
+  <% end %>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
