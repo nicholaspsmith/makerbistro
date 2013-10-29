@@ -1,28 +1,19 @@
-== README
+== Makerbistro
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple menu application for restaurants
 
-Things you may want to cover:
+Makerbistro allows you to:
 
-* Ruby version
+* View a list of all menu items (the menu)
 
-* System dependencies
+* Create and destroy menu items
 
-* Configuration
+* View the ingredients
 
-* Database creation
+= To run:
 
-* Database initialization
+* <tt>bundle install</tt>
 
-* How to run the test suite
+* <tt>bundle exec rake db:drop db:create db:migrate db:seed</tt> to populate menu with seeded items
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Enjoy!
