@@ -10,4 +10,12 @@ Makerbistro allows you to:
 
 * View the ingredients
 
+= To run:
+
+* <tt>bundle install</tt>
+
+* <tt>bundle exec rake db:drop db:create db:migrate db:seed</tt> to populate menu with seeded items
+
+* Enjoy!
+
 <tt>rake doc:app</tt>.
