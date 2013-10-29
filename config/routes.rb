@@ -7,6 +7,8 @@ Makerbistro::Application.routes.draw do
   end
 
   resources :ingredients
+
+  delete '/recipes/:ingredient_id/:menu_item_id' => 'recipes#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

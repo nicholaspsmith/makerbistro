@@ -20,13 +20,14 @@ i4 = Ingredient.create(name:"Fish")
 i5 = Ingredient.create(name:"Lemon Pepper")
 
 # Create Recipe for Tartiflette
-Recipe.create(menu_item:m1,ingredient:i1)
-Recipe.create(menu_item:m1,ingredient:i2)
-
+m1.ingredients << i1
+m1.ingredients << i2
+m1.save
 # Create Recipe for Cheesesteak
-Recipe.create(menu_item:m2,ingredient:i2)
-Recipe.create(menu_item:m2,ingredient:i3)
-
+m2.ingredients << i2
+m2.ingredients << i3
+m2.save
 # Create Recipe for Fish Filet
-Recipe.create(menu_item:m3,ingredient:i4)
-Recipe.create(menu_item:m3,ingredient:i5)
+m3.ingredients << i4
+m3.ingredients << i5
+m3.save

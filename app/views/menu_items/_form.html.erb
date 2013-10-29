@@ -10,13 +10,27 @@
       </ul>
     </div>
   <% end %>
-  <%= f.text_field :name, :placeholder => "Name" %>
-  <%= f.text_field :price, :placeholder => "Price"  %>
-  <% @menu_item.ingredients.each do |ingredient| %>
-  <%= f.fields_for "ingredients[]", ingredient do |ingredient_form| %>
-    <%= ingredient_form.text_field :name %>
-  <% end %>
-  <% end %>
+  <fieldset name="item">
+    <legend>Item</legend>
+    <%= f.text_field :name, :placeholder => "Name" %>
+    <%= f.text_field :price, :placeholder => "Price"  %>
+  </fieldset>
+  <fieldset name="ingredients">
+    <legend>Ingredients</legend>
+
+    <%= f.fields_for :ingredients do |i| %>
+      <%= i.text_field :name %>
+      <%= link_to 'Delete', remove_ingredient_path(i.object.id, @menu_item.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+
+    <%= f.fields_for :ingredients, Ingredient.new do |i| %>
+      <%= i.text_field :name %>
+      <button>Add</button>
+    <% end %>
+
+
+  </fieldset>
+
   <div class="actions">
     <%= f.submit %>
   </div>
